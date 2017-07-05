@@ -40,7 +40,7 @@ val paramRDD = backTodf.rdd.map(r => Vectors.dense( r.getDouble(5), r.getDouble(
 
 paramRDD.cache()
 
-//We now need to figure out optimal k
+//clustering
 
 val clusters1 = KMeans.train(paramRDD,1,100)
 val WSSSE1 = clusters1.computeCost(paramRDD)
